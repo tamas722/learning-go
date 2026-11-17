@@ -18,3 +18,35 @@ type Board struct {
 }
 
 // INSERT YOUR CODE HERE
+
+func copyPosition(p Position) Position {
+	if p.Coordinates == nil {
+		return Position{}
+	}
+	coords := make([]int, len(p.Coordinates))
+	copy(coords, p.Coordinates)
+	return Position{
+		Coordinates: coords,
+	}
+}
+
+func copyPiece(p Piece) Piece {
+	return Piece{
+		Type:     p.Type,
+		Color:    p.Color,
+		Position: copyPosition(p.Position),
+	}
+}
+
+func copyBoard(b Board) Board {
+	if b.Pieces == nil {
+		return Board{}
+	}
+	pieces := make([]Piece, len(b.Pieces))
+	for i, piece := range b.Pieces {
+		pieces[i] = copyPiece(piece)
+	}
+	return Board{
+		Pieces: pieces,
+	}
+}

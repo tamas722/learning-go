@@ -8,4 +8,13 @@ import "fmt"
 // repaintColor returns the complementary of the color received as argument or an error for an unknown error.
 func repaintColor(color string) (string, error) {
 	// INSERT YOUR CODE HERE
+
+	switch color {
+	case "magenta":
+		return "chartreuse", nil
+	case "chartreuse":
+		return "magenta", nil
+	default:
+		return "", fmt.Errorf("unknown color: %s", color)
+	}
 }

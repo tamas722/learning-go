@@ -1,8 +1,14 @@
 package pathsplit
 
-import "path"
+import (
+	"path"
+)
 
 // DO NOT REMOVE THIS COMMENT
 //go:generate go run ../../exercises-cli.go -student-id=$STUDENT_ID generate
 
 // INSERT YOUR CODE HERE
+func splitPath(fullPath string) string {
+	dir, _ := path.Split(fullPath)
+	return dir
+}

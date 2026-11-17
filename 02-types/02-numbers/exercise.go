@@ -5,13 +5,10 @@ import (
 	"strconv"
 )
 
-
 // DO NOT REMOVE THIS COMMENT
 //go:generate go run ../../exercises-cli.go -student-id=$STUDENT_ID generate
 
 // INSERT YOUR CODE HERE
-
-
 
 func gmean(x, y float64) int {
 	return int(math.Round(math.Sqrt(x * y)))

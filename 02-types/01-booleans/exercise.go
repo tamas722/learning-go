@@ -5,20 +5,18 @@ package logicalops
 
 // INSERT YOUR CODE HERE
 
-func inverse(b bool) bool{
+func inverse(b bool) bool {
 	return !b
 }
 
-
-func and(x, y bool) bool{
+func and(x, y bool) bool {
 	return x && y
 }
 
-func or(x, y bool) bool{
+func or(x, y bool) bool {
 	return x || y
 }
 
-func deMorgan(x, y bool) (bool){
+func deMorgan(x, y bool) bool {
 	return or(inverse(x), inverse(y))
 }
-

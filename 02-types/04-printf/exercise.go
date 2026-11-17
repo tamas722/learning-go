@@ -9,7 +9,6 @@ import (
 
 // INSERT YOUR CODE HERE
 
-
 func printBool(b bool) string {
 	return fmt.Sprintf("type: boolean value: %t", b)
 }

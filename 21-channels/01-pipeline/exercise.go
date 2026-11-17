@@ -4,3 +4,33 @@ package pipeline
 //go:generate go run ../../exercises-cli.go -student-id=$STUDENT_ID generate
 
 // INSERT YOUR CODE HERE
+
+func generator(nums []int) <-chan int {
+	out := make(chan int)
+	go func() {
+		for _, n := range nums {
+			out <- n
+		}
+		close(out)
+	}()
+	return out
+}
+
+func adder(in <-chan int) <-chan float32 {
+	out := make(chan float32)
+	go func() {
+		for n := range in {
+			out <- float32(n + 2)
+		}
+		close(out)
+	}()
+	return out
+}
+
+func collector(in <-chan float32) []float32 {
+	var res []float32
+	for n := range in {
+		res = append(res, n)
+	}
+	return res
+}

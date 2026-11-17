@@ -6,4 +6,18 @@ package grades
 // gradeExam returns the grade of an exam with the given percentage
 func gradeExam(percent float32) int {
 	// INSERT YOUR CODE HERE
+
+	switch {
+	case percent >= 80:
+		return 5
+	case percent >= 60:
+		return 4
+	case percent >= 40:
+		return 3
+	case percent >= 20:
+		return 2
+	default:
+		return 0
+	}
+
 }

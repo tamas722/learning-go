@@ -29,33 +29,32 @@ func trimLastChar(s string) string {
 	return s[:len(s)-1]
 }
 
-func swapFirstChar(s string) string{
-	if s ==	""{	
+func swapFirstChar(s string) string {
+	if s == "" {
 		return s
 	}
 
 	temp := "A"
 	temp2 := s[1:]
 
-	return temp+temp2
+	return temp + temp2
 }
 
-func swapLastChar(s string) string{
-	if s ==	""{	
+func swapLastChar(s string) string {
+	if s == "" {
 		return s
 	}
 
 	temp := "A"
 	temp2 := s[:len(s)-1]
 
-	return temp2+temp
+	return temp2 + temp
 }
 
-func prependChar(s string) string{
-	return "A"+s
+func prependChar(s string) string {
+	return "A" + s
 }
 
-func appendChar(s string) string{
-	return s+"A"
+func appendChar(s string) string {
+	return s + "A"
 }
-
